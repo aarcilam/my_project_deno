@@ -1,5 +1,5 @@
 import db from "../config/db.ts";
-import {User} from "../interfaces/User.interface.ts"
+import { User } from "../interfaces/User.interface.ts";
 
 export function getUsers() {
   let users;
@@ -14,7 +14,7 @@ export function getUsers() {
   return users;
 }
 
-export function createUser(user:User) {
+export function createUser(user: User) {
   try {
     const stmt = db.prepare("INSERT INTO users (name, email) VALUES (?, ?)");
     stmt.run(user.name, user.email);
@@ -25,9 +25,11 @@ export function createUser(user:User) {
   }
 }
 
-export function updateUser(id:number, user:User) {
+export function updateUser(id: number, user: User) {
   try {
-    const stmt = db.prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
+    const stmt = db.prepare(
+      "UPDATE users SET name = ?, email = ? WHERE id = ?",
+    );
     stmt.run(user.name, user.email, id);
     return { message: "User updated successfully" };
   } catch (error) {
@@ -36,7 +38,7 @@ export function updateUser(id:number, user:User) {
   }
 }
 
-export function deleteUser(id:number) {
+export function deleteUser(id: number) {
   try {
     const stmt = db.prepare("DELETE FROM users WHERE id = ?");
     stmt.run(id);

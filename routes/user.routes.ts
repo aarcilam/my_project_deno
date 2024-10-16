@@ -1,4 +1,9 @@
-import { createUser, deleteUser, getUsers, updateUser } from "../controllers/user.controller.ts";
+import {
+  createUser,
+  deleteUser,
+  getUsers,
+  updateUser,
+} from "../controllers/user.controller.ts";
 
 export default async function userRoutes(request: Request): Promise<Response> {
   const url = new URL(request.url);
@@ -9,7 +14,9 @@ export default async function userRoutes(request: Request): Promise<Response> {
     return await createUser(request);
   } else if (request.method === "PUT" && pathname.startsWith("/api/users/")) {
     return await updateUser(request);
-  } else if (request.method === "DELETE" && pathname.startsWith("/api/users/")) {
+  } else if (
+    request.method === "DELETE" && pathname.startsWith("/api/users/")
+  ) {
     return await deleteUser(request);
   }
 

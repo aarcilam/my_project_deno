@@ -14,7 +14,7 @@ db.exec(
       name TEXT NOT NULL,
       email TEXT NOT NULL UNIQUE
     );
-  `
+  `,
 );
 
 export default db;
