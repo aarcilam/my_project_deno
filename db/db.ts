@@ -14,15 +14,7 @@ db.exec(
       name TEXT NOT NULL,
       email TEXT NOT NULL UNIQUE
     );
-
-  `,
-  (err) => {
-    if (err) {
-      console.error("Error creating table:", err);
-    } else {
-      console.log("Table 'users' created or already exists.");
-    }
-  },
+  `
 );
 
 export default db;
