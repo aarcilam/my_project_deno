@@ -1,4 +1,4 @@
-import routes from "./routes/test.routes.ts";
+import routes from "./routes/index.ts";
 
 const handler = async (request: Request) => {
   return await routes(request);
