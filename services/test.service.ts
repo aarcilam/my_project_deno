@@ -1,6 +1,6 @@
 import db from "../db/db.ts";
 
-export async function getHello() {
+export function getHello() {
   let users;
 
   try {
