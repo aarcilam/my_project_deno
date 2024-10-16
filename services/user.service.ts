@@ -1,4 +1,4 @@
-import db from "../db/db.ts";
+import db from "../config/db.ts";
 import {User} from "../interfaces/User.interface.ts"
 
 export function getUsers() {
